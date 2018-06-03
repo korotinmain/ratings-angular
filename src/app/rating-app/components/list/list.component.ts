@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {TablePersonElement} from '../../../ITablePerson';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
-  constructor() { }
+  isVisibleDetails = false;
+  marksStrings = ['Перша','Друга','Третя','Четверта','П\'ята', 'Шоста'];
+  @Input() dataSource;
+  @Output() click = new EventEmitter<any>();
+  @Output() deletePerson = new EventEmitter<any>();
+  @Output() clearPersons = new EventEmitter();
 
-  ngOnInit() {
+
+  onDeletePerson(person: TablePersonElement){
+    this.deletePerson.emit(person);
   }
 
+  onClearPersons(){
+    this.clearPersons.emit();
+  }
 }

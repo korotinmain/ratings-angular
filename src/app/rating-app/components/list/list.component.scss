@@ -1,0 +1,52 @@
+
+.table-card{
+
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  .main-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    button{
+      margin-left: 4em;
+    }
+  }
+  .person-detail{
+    margin-top: 1em;
+    ul{
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      li{
+        cursor: pointer;
+        &:hover{
+          background: rgba(0, 131, 234, 0.27);
+        }
+      }
+    }
+  }
+  text-align: center;
+  font-size: 1.3em;
+  min-width: 50%;
+  margin-top: 0.5em;
+
+
+  /*
+
+
+  .delete-person{
+    margin-left: 5em;
+
+  }
+  */
+}
+
+.clear-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}

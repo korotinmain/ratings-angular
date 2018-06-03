@@ -1,3 +1,18 @@
-<p>
-  list works!
-</p>
+<mat-card class="table-card" (click)="isVisibleDetails = !isVisibleDetails"
+          *ngFor="let item of dataSource; let i = index">
+  <div class="main-info">
+    <p>{{item.name}} - {{item.summ}}</p>
+    <button mat-raised-button class="delete-person" (click)="onDeletePerson(item)">Видалити</button>
+  </div>
+  <div class="person-detail" *ngIf="isVisibleDetails">
+    <ul class="detail-list">
+      <li class="detail" *ngFor="let detail of item.marks; let i = index">
+        {{ marksStrings[i] }} Оцiнка - {{ detail }}
+      </li>
+    </ul>
+  </div>
+</mat-card>
+
+<div class="clear-card" *ngIf="dataSource.length > 0">
+  <button mat-raised-button color="primary" class="clear-persons" (click)="onClearPersons($event)">Очистити</button>
+</div>
