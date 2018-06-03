@@ -1,3 +1,62 @@
-<p>
-  formcard works!
-</p>
+<mat-card class="mat-form-adding" *ngIf="isVisibility" @enterAnimation>
+
+  <form [formGroup]="form" (submit)="onAddPerson($event)" novalidate class="adding-form">
+    <mat-form-field class="input-form-field">
+      <input matInput formControlName="Name" placeholder="Ім'я">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select formControlName="Mark_1" placeholder="Перша оцінка">
+        <mat-option *ngFor="let mark of marks" [value]="mark.value">
+          {{ mark.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-select formControlName="Mark_2" placeholder="Друга оцінка">
+        <mat-option *ngFor="let mark of marks" [value]="mark.value">
+          {{ mark.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select formControlName="Mark_3" placeholder="Третя оцінка">
+        <mat-option *ngFor="let mark of marks" [value]="mark.value">
+          {{ mark.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select formControlName="Mark_4" placeholder="Четверта оцінка">
+        <mat-option *ngFor="let mark of marks" [value]="mark.value">
+          {{ mark.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select formControlName="Mark_5" placeholder="П'ята оцінка">
+        <mat-option *ngFor="let mark of marks" [value]="mark.value">
+          {{ mark.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select formControlName="Mark_6" placeholder="Шоста оцінка">
+        <mat-option *ngFor="let mark of marks" [value]="mark.value">
+          {{ mark.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="!form.valid">Додати</button>
+  </form>
+</mat-card>
+<div class="visibility-button-block">
+  <button mat-raised-button class="display_button" (click)="onChangeVisibility($event)">Сховати/Показати</button>
+</div>
