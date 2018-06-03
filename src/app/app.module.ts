@@ -1,20 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
-import { FormcardComponent } from './rating-app/components/formcard/formcard.component';
-import { ListComponent } from './rating-app/components/list/list.component';
-import { ToolbarComponent } from './rating-app/components/toolbar/toolbar.component';
+
+import {RatingAppModule} from './rating-app/rating-app.module';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FormcardComponent,
-    ListComponent,
-    ToolbarComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RatingAppModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
