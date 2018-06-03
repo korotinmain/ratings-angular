@@ -1,3 +1,14 @@
-<p>
-  rating-app works!
-</p>
+<app-toolbar [isVisibility]="isVisibility" [dataSource]="dataSource"></app-toolbar>
+<app-formcard
+  [form]="form"
+  [isVisibility]="isVisibility"
+  [marks]="marks"
+  (addPerson)="addPerson($event)"
+  (changeVisibility)="changeVisibility()"
+></app-formcard>
+<app-list
+  [dataSource]="dataSource"
+  (deletePerson)="deletePerson($event)"
+  (clearPersons)="clearPersons()"
+></app-list>
+
